@@ -17,8 +17,6 @@ apply plugin: 'io.spring.dependency-management'
 
 group = 'de.singer.matthias'
 version = '0.0.1-SNAPSHOT'
-sourceCompatibility = 1.9
-targetCompatibility = 1.9
 
 repositories {
     mavenCentral()

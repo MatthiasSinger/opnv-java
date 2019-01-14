@@ -20,6 +20,7 @@ public class HaltestellenRepository implements CommandLineRunner {
 
     public List<Integer> getLinien(String name) {
         List<Integer> linien = haltestellen.get(name);
+        System.out.println(name + " " + linien);
         if (linien == null)
             throw new RuntimeException("Haltestelle nicht vorhanden");
         return linien;
