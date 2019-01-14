@@ -20,9 +20,12 @@ public class Linie {
     public static Linie of(List<String> lines) {
         List<Stop> stops = new ArrayList<>();
         String[] split = lines.get(0).split(",");
+        for (int i = 0; i < split.length; i++) {
+            split[i] = strip(split[i]);
+        }
         for (int i = 1; i < lines.size(); i++) {
             List<String> parts = Arrays.asList(lines.get(i).split(","));
-            String name = parts.get(0);
+            String name = parts.get(0).replaceAll("\\s+$", "");
             List<String> wochentags = parts.subList(1, Integer.parseInt(split[1]));
             List<String> samstags;
             List<String> sonntags;
@@ -42,12 +45,19 @@ public class Linie {
     }
 
     private static LocalTime parseTime(String input) {
-        if (input.isEmpty()) return null;
+        if (strip(input).isEmpty()) return null;
         String[] split = input.split("\\.");
+        for (int i = 0; i < split.length; i++) {
+            split[i] = strip(split[i]);
+        }
         if (split.length == 2) {
             return LocalTime.of(Integer.parseInt(split[0]), Integer.parseInt(split[1]));
         } else {
             return LocalTime.of(Integer.parseInt(split[0]), 0);
         }
+    }
+
+    private static String strip(String s) {
+        return s.replaceAll("\\s+", "");
     }
 }
