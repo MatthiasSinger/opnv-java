@@ -1,0 +1,144 @@
+Admiral-Scheer-Straße,8
+Alsenberg,1,4,14
+Alsenberger Straße,8,14
+Am Geigengrund,9,12
+Am Hohen Münster,10
+Am Milchhof,16,17,11
+Am Zelch,16,17,2
+An der Joerdensanlage,11,13
+Anspann/Klinikum,8,2,3
+August-Mohl-Straße,8,2,3,10
+BRK-Heim,8,14
+Bergstraße,1,2,3,4,5,6,10,14,15
+Berliner Platz,1,2,9,12,16,17
+Bismarckturm,10
+Blücherbrücke,8,2,3,10
+Blücherstraße,2,3,10
+Breslaustraße,5,15
+Brüder-Grimm-Straße,10
+Bühlstraße,10
+Carl-Orff-Straße,9,12
+Christoph-Klauß-Straße,10,5,7
+Danzigstraße,10,15
+Doebereinerstraße,15,6,7
+Dr.-Bonhoeffer-Straße,6,15
+Dr.-Enders-Straße,9,12
+Epprechtsteinstraße,8,1,14
+Fauna,10
+Frankenbergweg,1,14
+Freiheitshalle,16,1,2,11,17
+Friedhof,4,13
+Friedhof Haupteingang,3,4,13
+Fuhrmannstraße,9
+Gabelsbergerstraße,15,6,7
+Graf-Stauffenberg-Straße,12
+Grüne Au,9,11,13
+Gärtla,5,7,9,10,11,13,15
+Hangleite,11
+Hans-Böckler-Straße,1,4,14
+Hauptbahnhof Hof,5,8,14,6,15
+Hauptmannsweg,4,13
+Heideweg,1
+Heiligengrabstraße,15,6,7
+Heimstätten,9,12
+Hermann-Jahreis-Straße,8,14
+Hochschule,15,6,7
+HofBad,5,6,7,9,10,11,13,15
+Hofeck,16,17,11
+Hohensaas,12
+Hügelstraße,1,4,14
+Joditzer Weg,11
+Joensuustraße,16,17,11
+Johann-Weiß-Straße,15,6,7
+Jägersruh Döberlitzer Straße,9,11,13
+Jägersruh Forststraße,9,11,13
+Jägersruh Ostendstraße,9,11,13
+Jägerzeile,5,7,9,10,11,13,15
+Karlstraße,12,3,4,13,6
+Karolinenstraße,3,12,13
+Kasernen,12
+Klösterleinsweg,6
+Kolpingshöhe,8,14
+Konradskirche,16,1,2,11,17
+Krebsbachweg,4,13
+Kreuzsteinstraße,16,17,11
+Krötenbruck,2,3
+Krötenbrucker Straße,1,4,14
+Krötenbrucker Straße Tankstelle,8,14
+Krötenhof,2,3,10
+Kurt-Schumacher-Platz,1,2,3,4,10
+Königstraße,8,5,6,15
+Kösseinestraße,8,14
+Leimitz,10
+Leimitz Schule,10
+Leimitzgrundweg,15,7
+Leopoldstraße,11
+Lerchenweg,16,17,2
+Lessingbrücke,3
+Lessingstraße,3,12
+Liebigstraße,14,5,6,15
+Lindenbühl,8,1,14
+Ludwig-Uhland-Straße,2,3
+Luisenburgstraße,8
+Luitpoldstraße,1,2,9,12,16,17
+Lutherstraße,11
+Max-Blumtritt-Heim,15,6,7
+Max-Reger-Straße,9,12
+Michael-Gehringer-Straße,10
+Moschendorf,4,14
+Münsterschule,2,3
+Nahversorgungszentrum,10,7
+Oberes Tor,3,4,6,12,13,15
+Oelsnitzer Straße,9,11,13
+Ogdenstraße,1
+Orleansstraße,8,14
+Osseck,9,12
+Ossecker Straße,9,12
+Ostpreußenstraße,1,4,14
+Otterberg,1,4,14
+Ottostraße,15,6,7
+Peuntweg,2,3
+Pfaffenteichweg,10
+Pfarrhofstraße,11,13
+Pinzig,10,5
+Pinzigweg,5,15
+Quellitz,9,12
+Quellitz B15,12
+Rathaus,3,4,6,12,13,15
+Rekkenzeplatz,8,5,6,15
+Robert-Koch-Straße,2,3
+Rosenhof,10
+Scharnhorststraße,8
+Schaumbergstraße,8
+Schloßweg,12,13
+Schneebergstraße,1,14
+Schollenteich,8,1,4,14
+Schwalbenweg,16,17,2
+Seligenweg,12
+Silberbergstraße,16,17,11
+Sonnenplatz,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17
+Stadtpost,11
+Stadtwerke,12,13
+Stephanstraße,8,2,3
+Studentenberg,4,13
+Theater,16,17,11
+Theresienstein,4,13
+Theresienstraße,1,2,3,4,5,10
+Torhausstraße,16,1,17
+Umspannwerk,10
+Unteres Tor,3,4,6,12,13,15
+Unterkotzau,16,17,11
+Untreusee,1,14
+Viceburgstraße,8,1,4,14
+Viktor-von-Scheffel-Straße,10
+Vogelherd,16,17,2
+Wartturmweg,11,13
+Wilhelm-Raabe-Straße,2,3
+Wirthstraße,15,6,7
+Wölbattendorf,12
+Wölbattendorf Ortsmitte,12
+Zedtwitzer Straße,4
+Ziegelacker,16,1,17
+Zobelsreuther Straße,10
+Zoo,3,4,13
+Äußere-Bayreuther-Straße,8,2,3,10
