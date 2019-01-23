@@ -11,10 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @RestController
 public class MainController {
@@ -27,12 +25,25 @@ public class MainController {
         this.routing = routing;
     }
 
+    /**
+     * Route für das Laden der Haltestellen
+     *
+     * @return Haltestellen in Hof
+     */
     @CrossOrigin(origins = "*")
     @GetMapping("/haltestellen")
     public Set<String> haltestellen() {
-        return haltestelleRepository.getAllNames().stream().sorted().collect(Collectors.toCollection(LinkedHashSet::new));
+        return haltestelleRepository.getAllNames();
     }
 
+    /**
+     * Route für das Ergebnis, benötigt Parameter zur Berechnung der Routen
+     * @param start Startzeit aus HTTP Request
+     * @param ende Endzeit aus HTTP Request
+     * @param uhrzeit Uhrzeit aus HTTP Request
+     * @param datum Datum aus HTTP Request
+     * @return Liste der fünf besten Routen
+     */
     @CrossOrigin(origins = "*")
     @GetMapping("/result")
     public List<Route> result(

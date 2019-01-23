@@ -20,6 +20,13 @@ public class LinienRepository implements CommandLineRunner {
         return linien.get(i);
     }
 
+    /**
+     * Funktion des CommandLineRunner-Interface, wird beim Starten des Programms
+     * ausgeführt und liest die Linien CSV-Files ein
+     *
+     * @param args automatisch generiert
+     * @throws Exception
+     */
     @Override
     public void run(String... args) throws Exception {
         for (int i = 1; i <= 17; i++) {

@@ -25,13 +25,22 @@ public class Routing {
         this.linienRepository = linienRepository;
     }
 
+    /**
+     * Diese Methoden wird vom Controller aufgerufen um die Ergebnisse zu berechnen
+     *
+     * @param start Starthaltestelle
+     * @param ende  Endhaltestelle
+     * @param date  Datum der Suche
+     * @param time  Uhrzeit der Suche
+     * @return Fünf schnellsten Routen
+     */
     public List<Route> calculateRoutes(String start, String ende, LocalDate date, LocalTime time) {
         List<Route> routes = new ArrayList<>();
         List<Integer> startLinien = haltestellenRepository.getLinien(start);
         List<Integer> endLinien = haltestellenRepository.getLinien(ende);
         for (int startLinie : startLinien) {
             for (int endLinie : endLinien) {
-                routes.addAll(calculateRoutesForLine(start, ende, date, time, startLinie, endLinie));
+                routes.addAll(calculateRoutesForLinie(start, ende, date, time, startLinie, endLinie));
             }
         }
         Collections.sort(routes);
@@ -39,7 +48,19 @@ public class Routing {
         return routes.subList(0, endIndex);
     }
 
-    private List<Route> calculateRoutesForLine(String start, String ende, LocalDate date, LocalTime time, int startLinie, int endLinie) {
+    /**
+     * Diese Methode berechnet eine Route zwischen zwei Linien,
+     * bei gleicher Liniennummer auf dieser Route
+     *
+     * @param start      Starthaltestelle
+     * @param ende       Endhaltestelle
+     * @param date       Datum der Suche
+     * @param time       Uhrzeit der Suche
+     * @param startLinie Nummer der Linie auf der gestartet wird
+     * @param endLinie   Nummer der Linie auf der geendet wird
+     * @return alle Routen für diese Linie/n
+     */
+    private List<Route> calculateRoutesForLinie(String start, String ende, LocalDate date, LocalTime time, int startLinie, int endLinie) {
         List<List<Teilstrecke>> teilstreckenList = new ArrayList<>();
         if (startLinie == endLinie) {
             List<Teilstrecke> teilstrecken = calculateTeilstrecke(start, ende, date, time, startLinie);
@@ -82,6 +103,16 @@ public class Routing {
         return result;
     }
 
+    /**
+     * Berechnet die möglichen Teilstrecken die auf der angegeben
+     * Linie möglich sind
+     * @param start Starthaltestelle
+     * @param ende Endhaltestelle
+     * @param date Datum der Suche
+     * @param time Uhrzeit der Suche
+     * @param linieNr Linie auf der gesucht wird
+     * @return Teilstrecken der Linie
+     */
     private List<Teilstrecke> calculateTeilstrecke(String start, String ende, LocalDate date, LocalTime time, int linieNr) {
         List<Teilstrecke> teilstrecken = new ArrayList<>();
         Linie linie = linienRepository.getLinie(linieNr);
@@ -96,18 +127,35 @@ public class Routing {
             }
         }
 
-        if (startStop != null && endStop != null) {
-            int min = Math.min(startStop.getWochentags().size(), endStop.getWochentags().size());
-            for (int i = 0; i < min; i++) {
-                LocalTime currentStart = startStop.getWochentags().get(i);
-                LocalTime currentEnd = endStop.getWochentags().get(i);
-                if (currentStart != null && currentEnd != null && currentStart.isAfter(time)) {
-                    LocalDateTime startAtDate = LocalDateTime.of(date, currentStart);
-                    LocalDateTime endAtDate = LocalDateTime.of(date, currentEnd);
-                    teilstrecken.add(new Teilstrecke(start, ende, startAtDate, endAtDate, "Linie " + linieNr));
-                }
+        int dayOfWeek = date.getDayOfWeek().getValue();
+        List<LocalTime> startZeiten;
+        List<LocalTime> endZeiten;
+
+        if (startStop == null || endStop == null)
+            return teilstrecken;
+
+        if (dayOfWeek == 6) {
+            startZeiten = startStop.getSamstags();
+            endZeiten = endStop.getSamstags();
+        } else if (dayOfWeek == 7) {
+            startZeiten = startStop.getSonntags();
+            endZeiten = endStop.getSonntags();
+        } else {
+            startZeiten = startStop.getWochentags();
+            endZeiten = endStop.getWochentags();
+        }
+
+        int min = Math.min(startZeiten.size(), endZeiten.size());
+        for (int i = 0; i < min; i++) {
+            LocalTime currentStart = startZeiten.get(i);
+            LocalTime currentEnd = endZeiten.get(i);
+            if (currentStart != null && currentEnd != null && currentStart.isAfter(time)) {
+                LocalDateTime startAtDate = LocalDateTime.of(date, currentStart);
+                LocalDateTime endAtDate = LocalDateTime.of(date, currentEnd);
+                teilstrecken.add(new Teilstrecke(start, ende, startAtDate, endAtDate, "Linie " + linieNr));
             }
         }
         return teilstrecken;
     }
+
 }

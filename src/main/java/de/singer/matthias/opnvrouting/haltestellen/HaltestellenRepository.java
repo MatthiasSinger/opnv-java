@@ -14,18 +14,28 @@ import java.util.stream.Collectors;
 public class HaltestellenRepository implements CommandLineRunner {
     private Map<String, List<Integer>> haltestellen = new HashMap<>();
 
+    /**
+     * Gibt ein sortiertes Set der eingelesenen Haltestellen zurück
+     *
+     * @return sortierte Haltestellen
+     */
     public Set<String> getAllNames() {
-        return haltestellen.keySet();
+        return new TreeSet<>(haltestellen.keySet());
     }
 
     public List<Integer> getLinien(String name) {
         List<Integer> linien = haltestellen.get(name);
-        System.out.println(name + " " + linien);
         if (linien == null)
             throw new RuntimeException("Haltestelle nicht vorhanden");
         return linien;
     }
 
+    /**
+     * Funktion des CommandLineRunner-Interface, wird beim Starten des Programms
+     * ausgeführt und liest die haltestellen.txt ein
+     * @param args automatisch generiert
+     * @throws Exception
+     */
     @Override
     public void run(String... args) throws Exception {
         ClassPathResource cpr = new ClassPathResource("data/haltestellen.txt");

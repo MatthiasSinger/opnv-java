@@ -17,6 +17,12 @@ public class Linie {
         this.stops = stops;
     }
 
+    /**
+     * Erstellt ein Listenobjekt aus einer Liste von Zeilen
+     *
+     * @param lines Zeilen einer CSV-Datei
+     * @return Linie als Objekt
+     */
     public static Linie of(List<String> lines) {
         List<Stop> stops = new ArrayList<>();
         String[] split = lines.get(0).split(",");
