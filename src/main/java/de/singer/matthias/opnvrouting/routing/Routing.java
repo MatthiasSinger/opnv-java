@@ -14,6 +14,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * @author Matthias Singer, Maximilian May
+ */
 @Service
 public class Routing {
     private HaltestellenRepository haltestellenRepository;

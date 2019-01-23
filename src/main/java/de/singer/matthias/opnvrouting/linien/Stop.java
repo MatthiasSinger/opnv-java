@@ -6,6 +6,9 @@ import lombok.Data;
 import java.time.LocalTime;
 import java.util.List;
 
+/**
+ * @author Maximilian May
+ */
 @Data
 @AllArgsConstructor
 public class Stop {

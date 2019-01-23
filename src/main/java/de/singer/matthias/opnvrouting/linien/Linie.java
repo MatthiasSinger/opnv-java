@@ -9,6 +9,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
+/**
+ * @author Maximilian May
+ */
 @Data
 public class Linie {
     private List<Stop> stops;

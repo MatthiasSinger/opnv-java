@@ -12,6 +12,9 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * @author Maximilian May
+ */
 @Repository
 public class LinienRepository implements CommandLineRunner {
     private Map<Integer, Linie> linien = new HashMap<>();
@@ -25,7 +28,7 @@ public class LinienRepository implements CommandLineRunner {
      * ausgeführt und liest die Linien CSV-Files ein
      *
      * @param args automatisch generiert
-     * @throws Exception
+     * @throws Exception automatisch generiert
      */
     @Override
     public void run(String... args) throws Exception {

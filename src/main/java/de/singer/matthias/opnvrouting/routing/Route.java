@@ -6,6 +6,9 @@ import lombok.Data;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * @author Maximilian May
+ */
 @Data
 @AllArgsConstructor
 public class Route implements Comparable<Route> {

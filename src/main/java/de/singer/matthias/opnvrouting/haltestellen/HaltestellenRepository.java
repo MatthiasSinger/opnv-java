@@ -10,6 +10,9 @@ import java.nio.charset.Charset;
 import java.util.*;
 import java.util.stream.Collectors;
 
+/**
+ * @author Matthias Singer
+ */
 @Repository
 public class HaltestellenRepository implements CommandLineRunner {
     private Map<String, List<Integer>> haltestellen = new HashMap<>();
@@ -34,7 +37,7 @@ public class HaltestellenRepository implements CommandLineRunner {
      * Funktion des CommandLineRunner-Interface, wird beim Starten des Programms
      * ausgeführt und liest die haltestellen.txt ein
      * @param args automatisch generiert
-     * @throws Exception
+     * @throws Exception automatisch generiert
      */
     @Override
     public void run(String... args) throws Exception {

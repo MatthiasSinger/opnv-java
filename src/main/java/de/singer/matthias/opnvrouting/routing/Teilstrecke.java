@@ -5,6 +5,9 @@ import lombok.Data;
 
 import java.time.LocalDateTime;
 
+/**
+ * @author Maximilian May
+ */
 @Data
 @AllArgsConstructor
 public class Teilstrecke {

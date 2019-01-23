@@ -14,6 +14,9 @@ import java.time.LocalTime;
 import java.util.List;
 import java.util.Set;
 
+/**
+ * @author Matthias Singer
+ */
 @RestController
 public class MainController {
     private final HaltestellenRepository haltestelleRepository;
